@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Compare flooring and wall finishes from the same view of a sample 3D living room.">
+    <meta name="theme-color" content="#f8f5ee">
+    <title>Room Finish Lab</title>
+  </head>
+  <body>
+    <main>
+      <header class="page-header">
+        <div>
+          <p class="room-label">Room Finish Lab</p>
+          <h1>Compare room finishes</h1>
+          <p class="intro">Try a new floor and wall color in a sample living room. Both views share the same camera and layout.</p>
+        </div>
+        <button id="reset" class="reset" type="button">Reset preview</button>
+      </header>
+
+      <section class="views" aria-label="Living room comparison">
+        <figure>
+          <canvas id="original" role="img" aria-label="3D living room with the original oak finish"></canvas>
+          <figcaption><strong>Original</strong><span>Natural oak</span></figcaption>
+        </figure>
+        <figure>
+          <canvas id="preview" role="img" aria-label="3D living room with the chosen finish"></canvas>
+          <figcaption><strong>Preview</strong><span id="finish-name" aria-live="polite">Limestone</span></figcaption>
+        </figure>
+      </section>
+      <p id="renderer-error" class="renderer-error" role="status" hidden>WebGL 2 is unavailable. Open this prototype in a browser with hardware acceleration enabled.</p>
+
+      <fieldset id="finishes">
+        <legend>Choose a finish</legend>
+        <div class="options">
+          <label><input type="radio" name="finish" value="oak"><span class="swatch oak"></span><span>Natural oak</span></label>
+          <label><input type="radio" name="finish" value="limestone" checked><span class="swatch limestone"></span><span>Limestone</span></label>
+          <label><input type="radio" name="finish" value="walnut"><span class="swatch walnut"></span><span>Smoked walnut</span></label>
+        </div>
+      </fieldset>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
